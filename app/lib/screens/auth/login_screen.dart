@@ -181,9 +181,9 @@ class _LoginScreenState extends State<LoginScreen> {
           const SizedBox(height: 24),
           _inputField(
             controller: _emailController,
-            hint: 'Email address',
-            icon: Icons.email_outlined,
-            keyboardType: TextInputType.emailAddress,
+            hint: 'Username',
+            icon: Icons.person_outline_rounded,
+            keyboardType: TextInputType.text,
           ),
           const SizedBox(height: 12),
           _inputField(

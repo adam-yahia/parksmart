@@ -5,18 +5,18 @@ import '../models/parking_spot.dart';
 class ApiService {
   static const String baseUrl = 'http://172.20.10.7:5000';
 
-  static Future<String> login(String email, String password) async {
+  static Future<String> login(String username, String password) async {
     final response = await http
         .post(
           Uri.parse('$baseUrl/api/auth/login'),
           headers: {'Content-Type': 'application/json'},
-          body: jsonEncode({'email': email, 'password': password}),
+          body: jsonEncode({'username': username, 'password': password}),
         )
         .timeout(const Duration(seconds: 8));
 
     final data = jsonDecode(response.body) as Map<String, dynamic>;
     if (response.statusCode == 200) {
-      return data['token'] as String;
+      return data['access_token'] as String;
     }
     throw Exception(data['error'] ?? 'Login failed');
   }

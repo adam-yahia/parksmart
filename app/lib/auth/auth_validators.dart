@@ -1,13 +1,7 @@
 class AuthValidators {
-  // Standard RFC-compliant email pattern — accepts any domain
-  static final RegExp _emailRegex = RegExp(
-    r'^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$',
-    caseSensitive: false,
-  );
-
-  static String? validateEmail(String email) {
-    if (email.trim().isEmpty) return 'Enter your email.';
-    if (!_emailRegex.hasMatch(email.trim())) return 'Enter a valid email.';
+  static String? validateEmail(String username) {
+    if (username.trim().isEmpty) return 'Enter your username.';
+    if (username.trim().length < 3) return 'Username must be at least 3 characters.';
     return null;
   }
 

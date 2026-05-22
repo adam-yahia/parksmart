@@ -12,11 +12,12 @@ class ParkingSpot {
   });
 
   factory ParkingSpot.fromJson(Map<String, dynamic> json) {
+    final id = json['spot_id'] as int;
     return ParkingSpot(
-      id: json['id'] as int,
-      name: json['name'] as String,
-      occupied: json['occupied'] as bool,
-      updatedAt: json['updated_at'] as String? ?? '',
+      id: id,
+      name: 'Spot $id',
+      occupied: json['status'] == 'occupied',
+      updatedAt: json['last_updated'] as String? ?? '',
     );
   }
 }
