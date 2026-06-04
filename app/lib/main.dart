@@ -19,10 +19,10 @@ class ParkSmartApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           brightness: Brightness.dark,
-          scaffoldBackgroundColor: const Color(0xFF060B14),
+          scaffoldBackgroundColor: const Color(0xFF04060C),
           colorScheme: const ColorScheme.dark(
-            primary: Color(0xFF64FFDA),
-            surface: Color(0xFF0D1421),
+            primary: Color(0xFF59BFFF),
+            surface: Color(0xFF151B2B),
           ),
         ),
         home: const LoginScreen(),
